@@ -18,7 +18,7 @@ const useTodo = (todos: TodoItem[])=>{
   }
 
   const unCheckTodoItem = (unCheckedTodo: TodoItem) => {
-    setDoneList(todoList.filter((todo) => todo._id !== unCheckedTodo._id))
+    setDoneList(doneList.filter((todo) => todo._id !== unCheckedTodo._id))
     setTodoList([...todoList, unCheckedTodo])
   }
 

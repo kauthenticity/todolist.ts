@@ -16,14 +16,31 @@ const DoneItemComponent = ({ _id, content, unCheckTodoItem }: TodoItemProps) => 
 
   return (
     <DoneItemContainer>
-      <FiCheckCircle onClick={onClickCircle} />
-      <span>{content}</span>
+      <FiCheckCircle className="icon" onClick={onClickCircle} />
+      <Span>{content}</Span>
     </DoneItemContainer>
   )
 }
 
 export default DoneItemComponent
 
+const Span = styled.span`
+  color : #9f9f9f;
+  text-decoration: line-through;
+`
+
 const DoneItemContainer = styled.li`
-  
+  display : flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .icon{
+    cursor : pointer;
+    margin-right : 1rem;
+    color : #4FE3A4;
+    transition : color 0.25s ease-in;
+    &:hover{
+      color : #bfbfbf;
+    }
+  }
 `

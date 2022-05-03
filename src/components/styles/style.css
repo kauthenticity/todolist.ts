@@ -1,0 +1,9 @@
+.delete{
+  margin-left : auto;
+  color : #999999;
+  transition : color 0.25s ease-in;
+}
+
+.delete:hover{
+  color :  #000;
+}

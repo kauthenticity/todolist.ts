@@ -1,11 +1,19 @@
-import React, {useState} from 'react'
+import React, {useState, CSSProperties} from 'react'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid';
+import {RiAddLine} from 'react-icons/ri'
 //import '../hooks/usetInput'
 import { TodoItem } from '../types/types'
 
 type onSubmitTodoProps = {
   onSubmitTodo : (todo:TodoItem) => void
+}
+
+const iconStyle:CSSProperties= {
+  position : 'absolute',
+  right : 0,
+  cursor : 'pointer',
+  color : '7f7f7f'
 }
 
 const TodoInput = ({ onSubmitTodo}:onSubmitTodoProps) => {
@@ -27,9 +35,9 @@ const TodoInput = ({ onSubmitTodo}:onSubmitTodoProps) => {
 
   return (
     <Form onSubmit={doneTodo}>
-      <Input onChange={onChangeInput} value={ todo.content}>
+      <Input onChange={onChangeInput} value={todo.content} placeholder={"what is your main focus today?"}>
       </Input>
-      <Button onClick={doneTodo}>press</Button>
+      <RiAddLine style={iconStyle} onClick={doneTodo} />
     </Form>
   
   )
@@ -37,9 +45,21 @@ const TodoInput = ({ onSubmitTodo}:onSubmitTodoProps) => {
 
 export default TodoInput
 
-const Input = styled.input``
-
-const Form = styled.form`
+const Input = styled.input`
+  font-family : "Louis George Cafe";
+  width : 100%;
+  padding : 0.5rem;
+  outline : none;
+  border : none;
+  border-bottom : 1px solid #7f7f7f;
+  font-size : 0.8rem;
   
 `
-const Button = styled.button``
+
+const Form = styled.form`
+  position : relative;
+  display : flex;
+  align-items: center;
+  justify-content: center;
+  margin : 1.25rem 0;
+`

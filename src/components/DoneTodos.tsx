@@ -19,4 +19,8 @@ const DoneTodos = ({ doneList, unCheckTodoItem }: DoneTodosProps) => {
 
 export default DoneTodos
 
-const Ul = styled.ul``
+const Ul = styled.ul`
+  margin-top : auto;
+  list-style : none;
+  padding-inline-start : 0;
+`

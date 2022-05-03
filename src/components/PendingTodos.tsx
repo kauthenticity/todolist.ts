@@ -20,4 +20,7 @@ const PendingTodos = ({ todoList, removeTodoItem, checkTodoItem }: PendingTodosP
 
 export default PendingTodos
 
-const Ul = styled.ul``
+const Ul = styled.ul`
+  list-style : none;
+  padding-inline-start : 0;
+`
